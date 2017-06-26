@@ -1,0 +1,42 @@
+{
+  "name": "phollow.fr",
+  "version": "1.0.0",
+  "description": "My blog Phollow.fr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "phenomic start",
+    "build": "phenomic build"
+  },
+  "author": "Jérôme Mahuet",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "@phenomic/cli": "^1.0.0-alpha.3",
+    "@phenomic/core": "^1.0.0-alpha.3",
+    "@phenomic/preset-react-app": "^1.0.0-alpha.3",
+    "highlight.js": "^9.12.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-google-analytics": "^0.2.0",
+    "react-helmet": "^5.0.0",
+    "react-primitives": "^0.4.2",
+    "react-router": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "gray-matter": "^2.1.1",
+    "image-optim": "^3.0.0",
+    "imageoptim-cli": "^1.14.9",
+    "mkdirp": "^0.5.1",
+    "nightmare": "^2.10.0",
+    "png-jpg": "0.0.2",
+    "rimraf": "^2.6.1",
+    "webpack": "^3.0.0"
+  },
+  "phenomic": {
+    "presets": [
+      "@phenomic/preset-react-app"
+    ]
+  }
+}
