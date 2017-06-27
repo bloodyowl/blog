@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "phenomic start",
-    "build": "phenomic build"
+    "start": "cross-env NODE_ENV=development phenomic start",
+    "build": "cross-env NODE_ENV=production phenomic build"
   },
   "author": "Jérôme Mahuet",
   "license": "ISC",
@@ -32,6 +32,7 @@
     "nightmare": "^2.10.0",
     "png-jpg": "0.0.2",
     "rimraf": "^2.6.1",
+    "cross-env": "^5.0.1",
     "webpack": "^3.0.0"
   },
   "phenomic": {

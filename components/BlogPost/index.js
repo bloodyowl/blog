@@ -11,17 +11,15 @@ class BlogPost extends React.Component {
         super(props);
     }
 
-    // noinspection JSMethodCanBeStatic
-    componentWillMount() {
-        BlogPost.highlightCode();
+    componentDidMount() {
+        this.highlightCode();
     }
 
-    // noinspection JSMethodCanBeStatic
     componentDidUpdate() {
-        BlogPost.highlightCode();
+        this.highlightCode();
     }
 
-    static highlightCode() {
+    highlightCode() {
         if (typeof document !== 'undefined') {
             const nodes = document.querySelectorAll('pre code');
 

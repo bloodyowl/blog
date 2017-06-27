@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "react-helmet";
+import PropTypes from "prop-types"
+
 
 const Html = props => {
     const helmet = Head.renderStatic();
@@ -9,6 +11,7 @@ const Html = props => {
             {helmet.base.toComponent()}
             {helmet.title.toComponent()}
             {helmet.meta.toComponent()}
+            <link rel="stylesheet" href="/styles.css" />
             {helmet.link.toComponent()}
             {helmet.style.toComponent()}
             {helmet.script.toComponent()}
@@ -16,15 +19,21 @@ const Html = props => {
         </head>
         <body {...helmet.bodyAttributes.toComponent()}>
         {/* phenomic html output */}
-        {props.body}
+        { props.body }
         {/* phenomic current state, as json */}
         {/* required so sync static/client rendering */}
-        {props.state}
+        { props.state }
         {/* phenomic entry script */}
-        {props.script}
+        { props.script }
         </body>
         </html>
     );
+};
+
+Html.propTypes = {
+  body: PropTypes.string,
+  state: PropTypes.object,
+  script: PropTypes.string
 };
 
 export default Html;

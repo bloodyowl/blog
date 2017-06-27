@@ -1,11 +1,17 @@
 import React from 'react';
 import { createContainer, query } from '@phenomic/preset-react-app/lib/client';
 import { Link } from 'react-router';
+import Head from 'react-helmet';
+
+const title = "omegalul";
 
 const Home = ({ posts }) =>
     <div>
         <h1>Home</h1>
-        <ul>
+          <Head>
+              <title>{ title }</title>
+          </Head>
+          <ul>
             {posts &&
             posts.node &&
             posts.node.list &&
