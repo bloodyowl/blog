@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import { createContainer, query, BodyRenderer } from '@phenomic/preset-react-app/lib/client';
-import hljs from 'highlight.js';
 import PageError from "../PageError";
 
 class BlogPost extends React.Component {
@@ -12,6 +11,7 @@ class BlogPost extends React.Component {
     }
 
     componentDidMount() {
+        this.highlight = new Promise(resolve => require.ensure(["highlight.js"], () => resolve(require("highlight.js"))))
         this.highlightCode();
     }
 
@@ -21,12 +21,9 @@ class BlogPost extends React.Component {
 
     highlightCode() {
         if (typeof document !== 'undefined') {
-            const nodes = document.querySelectorAll('pre code');
-
-            let i;
-            for (i = 0; i < nodes.length; i++) {
-                hljs.highlightBlock(nodes[i]);
-            }
+            Array.from(document.querySelectorAll('pre code')).forEach(node => {
+                this.highlight.then(hljs => hljs.highlightBlock(node));
+            })
         }
     }
 
